@@ -3,18 +3,19 @@ import org.apache.commons.io.LineIterator;
 
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Scanner;
 public class FileHandler{
-    public void getInput(String path) throws IOException {
+
+    public ArrayList<String> getInput(String path) throws IOException {
         File f = new File(path);
-        LineIterator it = FileUtils.lineIterator(f, "UTF-8");
-        try {
+        ArrayList<String> res = new ArrayList<>();
+        try (LineIterator it = FileUtils.lineIterator(f, "UTF-8")) {
             while (it.hasNext()) {
-                String line = it.nextLine();
-                System.out.println(line);
+                res.add(it.nextLine());
             }
-        } finally {
-            it.close();
         }
+        return res;
     }
 }
