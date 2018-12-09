@@ -12,7 +12,12 @@ public class main {
         for (String st:list) {
             n = Integer.parseInt(st.substring(0, st.indexOf(" ")));
             m = Integer.parseInt(st.substring(st.indexOf(" ")+1));
-            System.out.println(en.eulerian(n,m));
+
+            if(m >= n){
+                System.out.println("No se puede hacer la operación porque m>n");
+            }else {
+                System.out.println("n=" + n + ", m=" + m + " ;Euler=" + en.eulerian(n, m));
+            }
 
         }
 
