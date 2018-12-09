@@ -4,33 +4,17 @@ import java.util.ArrayList;
 
 public class main {
     public static void main(String[] args) throws IOException {
-        int n ,m;
+
         Eulerian en = new Eulerian();
         FileHandler fh = new FileHandler();
-        ArrayList<String> list = fh.getInput("H:\\git\\EulerianJava\\in");
-/*
-        switch (args[4]){
-            case "-e":
-                switch (args[0]){
-                    case "-t" :
+        ArrayList<String> list = fh.getInput("/home/nestorojedag/IdeaProjects/EulerianJava/in");
+        int n , m;
+        for (String st:list) {
+            n = Integer.parseInt(st.substring(0, st.indexOf(" ")));
+            m = Integer.parseInt(st.substring(st.indexOf(" ")+1));
+            System.out.println(en.eulerian(n,m));
 
-                    case "-m" :
-
-                    default:
-                        System.out.println("Faltan argumentos");
-
-                }
-            default:
-                switch (args[0]){
-                    case "-t" :
-
-                    case "-m" :
-
-                    default:
-                        System.out.println("Faltan argumentos");
-
-                }
         }
-        */
+
     }
 }
