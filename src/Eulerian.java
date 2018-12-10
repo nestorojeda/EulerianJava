@@ -2,7 +2,7 @@ public class Eulerian {
 
 
 
-    public int eulerian(int n, int m)
+    public int euleriantab(int n, int m)
     {
         int[][] dp = new int[n+1][m+1];
 
@@ -17,15 +17,27 @@ public class Eulerian {
 
                     // If j is 0, then make
                     // that state as 1.
-                    if (j == 0)
+                    if (j == 0) {
                         dp[i][j] = 1;
 
                         // basic recurrence relation.
-                    else
-                        dp[i][j] = ((i - j) *
-                                dp[i - 1][j - 1]) +
-                                ((j + 1) * dp[i - 1][j]);
+                    }else {
+                        dp[i][j] = ((i - j) * dp[i - 1][j - 1]) + ((j + 1) * dp[i - 1][j]);
+                    }
                 }
+            }
+        }
+
+        return dp[n][m];
+    }
+
+    public int eulerianmem(int n, int m){
+        int[][] dp = new int[n+1][m+1];
+        if (n > m){
+            if(m == 0){
+                dp[n][m] = 1;
+            }else{
+                dp[n][m] = ((n-m) * eulerianmem(n-1, m-1)) + ((m+1) * eulerianmem(n-1, m));
             }
         }
 

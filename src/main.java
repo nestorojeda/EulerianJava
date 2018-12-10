@@ -23,7 +23,7 @@ public class main {
                 if(m >= n){
                     System.out.println("No se puede hacer la operación porque en "+"n=" + n + " y m=" + m +" n < m");
                 }else {
-                    System.out.println("n=" + n + ", m=" + m + " ;Eulerian Number=" + en.eulerian(n, m));
+                    System.out.println("n=" + n + ", m=" + m + " ;Eulerian Number=" + en.eulerianmem(n, m));
                 }
             }
 
