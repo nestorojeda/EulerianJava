@@ -45,8 +45,10 @@ public class EulerianJava {
                 n = Integer.parseInt(st.substring(0, st.indexOf(" ")));
                 m = Integer.parseInt(st.substring(st.indexOf(" ")+1));
 
-                if(m >= n){
-                    System.out.println("No se puede hacer la operación porque en "+"n=" + n + " y m=" + m +" n < m");
+                if(m >= n) {
+                    System.out.println("No se puede hacer la operación porque en " + "n=" + n + " y m=" + m + " n < m");
+                }else if (m < 0){
+                    System.out.println("No se puede hacer la operación con números negativos");
                 }else {
                     if(flagm){
                         System.out.println("n=" + n + ", m=" + m + " ;Eulerian Number=" + en.eulerianmem(n, m));
