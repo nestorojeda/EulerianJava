@@ -1,8 +1,5 @@
-public class Eulerian {
-
-
-
-    public int euleriantab(int n, int m)
+class Eulerian {
+    int euleriantab(int n, int m)
     {
         int[][] dp = new int[n+1][m+1];
 
@@ -31,7 +28,7 @@ public class Eulerian {
         return dp[n][m];
     }
 
-    public int eulerianmem(int n, int m){
+    int eulerianmem(int n, int m){
         int[][] dp = new int[n+1][m+1];
         if (n > m){
             if(m == 0){
