@@ -1,8 +1,11 @@
 class Eulerian {
+    private int dp[][];
+
+    public Eulerian (int n, int m){
+        dp = new int[n+1][m+1];
+    }
     int euleriantab(int n, int m)
     {
-        int[][] dp = new int[n+1][m+1];
-
         // For each row from 1 to n
         for (int i = 1; i <= n; i++) {
 
@@ -29,7 +32,7 @@ class Eulerian {
     }
 
     int eulerianmem(int n, int m){
-        int[][] dp = new int[n+1][m+1];
+        if (dp[n][m] != 0) return dp[n][m];
         if (n > m){
             if(m == 0){
                 dp[n][m] = 1;
@@ -37,7 +40,6 @@ class Eulerian {
                 dp[n][m] = ((n-m) * eulerianmem(n-1, m-1)) + ((m+1) * eulerianmem(n-1, m));
             }
         }
-
         return dp[n][m];
     }
 

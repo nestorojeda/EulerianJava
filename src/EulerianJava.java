@@ -6,7 +6,7 @@ import java.io.IOException;
 public class EulerianJava {
     public static void main(String[] args) throws IOException {
 
-        Eulerian en = new Eulerian();
+
         boolean flagm = false;  // si es true se ejecuta memorization y si es false tabulation
         boolean flagt = false;  // si es true se activa el tiempo
         File f;
@@ -50,10 +50,11 @@ public class EulerianJava {
                 }else if (m < 0){
                     System.out.println("No se puede hacer la operación con números negativos");
                 }else {
+                    Eulerian en = new Eulerian(n,m);
                     if(flagm){
-                        System.out.println("n=" + n + ", m=" + m + " ;Eulerian Number=" + en.eulerianmem(n, m));
+                        System.out.println("n=" + n + ", m=" + m + "; Eulerian Number=" + en.eulerianmem(n, m));
                     }else{
-                        System.out.println("n=" + n + ", m=" + m + " ;Eulerian Number=" + en.euleriantab(n, m));
+                        System.out.println("n=" + n + ", m=" + m + "; Eulerian Number=" + en.euleriantab(n, m));
 
                     }
                 }
