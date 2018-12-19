@@ -1,5 +1,5 @@
 class Eulerian {
-    private int dp[][];
+    private int[][] dp;
 
     public Eulerian (int n, int m){
         dp = new int[n+1][m+1];
